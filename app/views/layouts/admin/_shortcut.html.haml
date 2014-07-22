@@ -1,0 +1,8 @@
+#shortcut
+  %ul
+    / - if current_user.has_role? :superuser
+    /   %li
+    /     = link_to '#', class: 'jarvismetro-tile big-cubes bg-color-blue' do
+    /       %span.iconbox
+    /         %i.fa.fa-calendar.fa-4x
+    /         %span 日历

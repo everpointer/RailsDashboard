@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title 邻家田订单管理系统
+    %meta{"charset" => "utf-8"}
+    %meta{"name" => "description", "content" => "邻家田订单管理系统"}
+    %meta{"name" => "author", "content" => "linjiatian"}
+    %meta{"name" => "viewport", "content" => "initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"}
+    %meta{"name" => "apple-mobile-web-app-capable", "content" => "yes"}
+    %meta{"name" => "apple-mobile-web-app-status-bar-style", "content" => "black"}
+    = stylesheet_link_tag "admin/application", media: "all", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    %link{href: "/images/favicon/favicon.ico", rel: "shortcut icon", type: "image/x-icon"}
+    %link{href: "/images/favicon/favicon.ico", rel: "icon", type: "image/x-icon"}
+  %body
+    = render partial: "layouts/admin/header" 
+    = render partial: "layouts/admin/left_panel" 
+    #main{role: "main"}
+      #ribbon
+        %span.ribbon-button-alignment
+          %span#refresh.btn.btn-ribbon{"data-html" => "true", "data-original-title" => "信息...", "data-placement" => "bottom", "data-title" => "刷新"}
+            %i.fa.fa-refresh
+        // breadcrumb will be empty if using AJAX version
+        %ol.breadcrumb
+          %li 主页
+          %li 控制台
+      #content
+        = yield
+    = render partial: "layouts/admin/footer"
+    = render partial: "layouts/admin/shortcut"
+    = javascript_include_tag "admin/application", "data-turbolinks-track" => true

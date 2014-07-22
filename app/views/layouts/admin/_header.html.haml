@@ -1,0 +1,32 @@
+%header#header
+  #logo-group
+    %span#logo
+      %img{alt: "邻家田", src: "/images/logo.png"}
+  .pull-right
+    // collapse menu button
+    #hide-menu.btn-header.pull-right        
+      %span
+        %a{href: "javascript:void(0);", "data-action" => "toggleMenu", title: "折叠菜单"}
+          %i.fa.fa-reorder
+    // logout button
+    #logout.btn-header.transparent.pull-right
+      %span
+        %a{"data-logout-msg" => "注销后关闭一下浏览器会更安全哦", "data-action" => "userLogout", href: "#", title: "注销"}
+          %i.fa.fa-sign-out
+    // search mobile button (this is hidden till mobile view port)
+    #search-mobile.btn-header.transparent.pull-right
+      %span
+        %a{href: "javascript:void(0);", title: "搜索"}
+          %i.fa.fa-search
+    // input: search field
+    %form.header-search.pull-right{action: "#"}
+      %input#search-fld{name: "关键字", placeholder: "查看更多", type: "text"}
+      %button{type: "submit"}
+        %i.fa.fa-search
+      %a#cancel-search-js{href: "javascript:void(0);", title: "取消搜索"}
+    // fullscreen button
+    #fullscreen.btn-header.transparent.pull-right
+      %span
+        %a{href: "javascript:void(0);", "data-action" => "launchFullscreen", title: "全屏"}
+          // have to put our own icon into button
+          %i.fa.fa-arrows-alt
